@@ -13,7 +13,7 @@
           <div class="card-body">
             <h3 class="card-title">Paket Wisata Sehari di Palembang</h3>
             <p class="card-text">Nikmati perjalanan sehari penuh dengan pengalaman menarik di Palembang. Kunjungi Jembatan Ampera, Benteng Kuto Besak, dan nikmati kuliner khas Palembang.</p>
-            <a href="/paket/sehari" class="btn btn-primary">Detail Paket</a>
+            <a href="/paket/sehari" class="btn btn-primary">Pesan Sekarang</a>
           </div>
         </div>
       </div>
@@ -23,7 +23,7 @@
           <div class="card-body">
             <h3 class="card-title">Paket Wisata Kuliner Palembang</h3>
             <p class="card-text">Rasakan kelezatan makanan khas Palembang seperti Pempek dan Teh Talua. Paket ini termasuk tur kuliner dengan pemandu lokal.</p>
-            <a href="/paket/kuliner" class="btn btn-primary">Detail Paket</a>
+            <a href="/paket/kuliner" class="btn btn-primary">Pesan Sekarang</a>
           </div>
         </div>
       </div>
@@ -33,7 +33,7 @@
           <div class="card-body">
             <h3 class="card-title">Paket Wisata Budaya dan Sejarah</h3>
             <p class="card-text">Jelajahi kekayaan budaya dan sejarah Palembang melalui kunjungan ke museum dan situs bersejarah.</p>
-            <a href="/paket/budaya" class="btn btn-primary">Detail Paket</a>
+            <a href="/paket/budaya" class="btn btn-primary">Pesan Sekarang</a>
           </div>
         </div>
       </div>
@@ -52,3 +52,9 @@
   `
 })
 %>
+
+<% listpaketwisata.forEach(paket => { %>
+  <li>
+    <%= paket.nama %> : Rp <%= paket.harga %>
+  </li>
+<% }) %>
