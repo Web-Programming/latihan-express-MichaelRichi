@@ -22,8 +22,10 @@ router.get('/orderpaket', function(req, res, next) {
   res.render('orderpaket', { title: 'Form Pemesanan Tiket' });
 });
 
-router.post('/orderdetail', function(req, res, next) {
-  res.render('orderdetail', { title: 'Detail Pemesanan Tiket' });
+router.post('/orderdetail', (req, res) => {
+  const { nama, email, paket, tanggal } = req.body;
+  res.render('orderdetail', { nama, email, paket, tanggal });
 });
+
 
 module.exports = router;

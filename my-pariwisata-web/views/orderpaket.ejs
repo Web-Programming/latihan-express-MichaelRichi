@@ -1,0 +1,37 @@
+<%- include('master', {
+    title: 'Form Order Paket Wisata',
+    body: `
+    <div class="container mt-5">
+      <h1 class="text-center mb-4">Form Pemesanan Paket Wisata</h1>
+  
+      <form action="/orderdetail" method="POST">
+        <div class="mb-3">
+          <label for="nama" class="form-label">Nama Lengkap:</label>
+          <input type="text" class="form-control" id="nama" name="nama" required>
+        </div>
+  
+        <div class="mb-3">
+          <label for="email" class="form-label">Email:</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+  
+        <div class="mb-3">
+          <label for="paket" class="form-label">Pilih Paket Wisata:</label>
+          <select class="form-select" id="paket" name="paket" required>
+            <option value="Museum Balaputradewa">Paket Wisata Museum Balaputradewa - Rp 500.000</option>
+            <option value="Jembatan Ampera">Paket Wisata Jembatan Ampera - Rp 1.000.000</option>
+            <option value="Taman Kambang Iwak">Paket Wisata Taman Kambang Iwak - Rp 400.000</option>
+          </select>
+        </div>
+  
+        <div class="mb-3">
+          <label for="tanggal" class="form-label">Tanggal Keberangkatan:</label>
+          <input type="date" class="form-control" id="tanggal" name="tanggal" required>
+        </div>
+  
+        <button type="submit" class="btn btn-primary">Pesan Sekarang</button>
+      </form>
+    </div>
+    `
+  }) %>
+  

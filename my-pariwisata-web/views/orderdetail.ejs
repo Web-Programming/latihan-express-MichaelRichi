@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Order Pemesanan Tiket</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-title {
+            color: #007bff;
+        }
+        .list-group-item {
+            border: none;
+            padding: 15px;
+            background-color: #e9ecef;
+        }
+        .list-group-item strong {
+            color: #333;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            border: none;
+        }
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+        @media (max-width: 576px) {
+            .container {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Detail Pemesanan Paket Wisata</h1>
+    
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Terima Kasih atas Pesanan Anda!</h5>
+            <p class="card-text">Berikut adalah detail pemesanan Anda:</p>
+    
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><strong>Nama Lengkap:</strong> <%= nama %></li>
+              <li class="list-group-item"><strong>Email:</strong> <%= email %></li>
+              <li class="list-group-item"><strong>Paket Wisata:</strong> <%= paket %></li>
+              <li class="list-group-item"><strong>Tanggal Keberangkatan:</strong> <%= tanggal %></li>
+            </ul>
+    
+            <div class="mt-3">
+              <a href="/" class="btn btn-secondary">Kembali ke Halaman Utama</a>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
+  
+  
+  
