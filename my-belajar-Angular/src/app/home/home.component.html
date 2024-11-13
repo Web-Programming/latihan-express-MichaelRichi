@@ -1,3 +1,12 @@
-<h1>Selamat Datang SI52</h1>
-<h1>Hari Ini Kita Belajar Angular</h1>
-<p>home works!</p>
+<section>
+    <form action="">
+        <input type="text" placeholder="Filter By City">
+        <button class="primary" type="button">Search</button>
+    </form>
+</section>
+<section class="results">
+    <!--Memanggil Component Housing Location(Pengirim Data)-->
+    <app-housing-location *ngFor="let housingLocation of housingLocationList"
+    [housingLocation]="housingLocation">
+    </app-housing-location>
+</section>
