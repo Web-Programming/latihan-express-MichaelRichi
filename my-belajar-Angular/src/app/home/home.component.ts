@@ -27,7 +27,7 @@ export class HomeComponent {
       name: "Citra Land",
       city: "Palembang",
       state: "Sumsel",
-      photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTta7Pk3A7e0JkMLOgt16mr34t9_QMa2J99UQ&s",
+      photo: "https://cdn.lugc.link/d9447493-deeb-4408-bfd5-a621353fe621/-/preview/278x183/-/format/auto/",
       availableUnits: 12,
       wifi: true,
       laundry: true
