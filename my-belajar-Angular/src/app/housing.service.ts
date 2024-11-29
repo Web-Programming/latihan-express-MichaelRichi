@@ -41,7 +41,27 @@ export class HousingService {
     const data = await fetch(`${this.url}/${id}`); //http://localhost:3000/housing/1
     return await data.json()?? {};  // null or undefined handling
   }
-  submitAplication(firstName: string, lastName: string, email: string){
-    console.log(firstName, lastName, email);
+  submitAplication(firstName: string, lastName: string, email: string) : Promise<any>{
+    //console.log(firstName, lastName, email);
+    const apiUrl = "http://localhost:3000/insert/register";
+    const data = fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        firstname: firstName,
+        lastname: lastName,
+        email: email
+      })
+    });
+    return data.then(response => {
+      if(!response.ok){
+        throw new Error("Submit Application Failed");
+      }else{
+        alert("Submit Application Success");
+      }
+      return response.json();
+    });
   }
 }

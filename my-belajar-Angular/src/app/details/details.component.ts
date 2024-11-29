@@ -72,4 +72,5 @@ export class DetailsComponent {
       this.applyForm.value.email ?? '',
     )
   }
+  readonly baseUrl = 'https://angular.io/assets/images/tutorials/faa';
 }
