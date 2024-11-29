@@ -1,10 +1,13 @@
+require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 //loadmongodb dbconnection
-require('./app_server/models/db')
+require('./app_server/models/db');
+require("./app_server/configs/passport"); //load file config
+// Harus Dipanggil setelah depedency utama yg lainnya ada
 
 var indexRouter = require('./app_server/routes/index');
 var usersRouter = require('./app_server/routes/users');
