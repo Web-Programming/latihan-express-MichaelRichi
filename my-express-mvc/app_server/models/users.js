@@ -34,12 +34,12 @@ userSchema.methods.generateJwt = function () {
     const expiry = new Date();
     expiry.setDate(expiry.getDate() + 7); // 7 hari
 
-    return jwt.sign({
+    return jwt.sign({ // Terenskripsi dalam token( yg dibaca dalam jwt.io)
         _id: this._id,
         email: this.email,
         name: this.name,
         exp: parseInt(expiry.getTime() / 1000),
-    }, process.env.JWT_SECRET);
+    }, process.env.JWT_SECRET);// SECRET Membangkitkan Token JWT
 };
 
 const User = mongoose.model('User', userSchema);
