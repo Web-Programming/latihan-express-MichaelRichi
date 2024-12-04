@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AuthenticationService } from '../authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -14,6 +16,8 @@ export class RegisterComponent {
   formError: String = "";
 
   //Inject Class Router dan Service Authetication
+  router: Router = inject(Router);
+  authService: AuthenticationService = inject(AuthenticationService);
 
   constructor(private fb: FormBuilder){
     this.registerForm = this.fb.group({
@@ -42,6 +46,16 @@ export class RegisterComponent {
 
       console.log('Form submitted', formData);
       //Panggil method submitRegister()
+      this.authService.submitRegister(this.registerForm).then((res) => {
+        if(res.message !=null){
+          this.formError = res.message;
+        }else if(res.token !=null){
+          //this.authService.saveToken(res.token);
+          this.router.navigateByUrl('/'); //Ketika Register Berhasil Maka Halaman yang dituju Home
+        }else{
+          this.formError = 'Register Failed Please Try Again';
+        }
+      })
     } else {
       this.formError = 'All fields are required, please try again';
       //console.log('Form is not valid');
