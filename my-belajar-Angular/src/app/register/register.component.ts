@@ -50,7 +50,7 @@ export class RegisterComponent {
         if(res.message !=null){
           this.formError = res.message;
         }else if(res.token !=null){
-          //this.authService.saveToken(res.token);
+          this.authService.saveToken(res.token);
           this.router.navigateByUrl('/'); //Ketika Register Berhasil Maka Halaman yang dituju Home
         }else{
           this.formError = 'Register Failed Please Try Again';

@@ -1,6 +1,6 @@
 export interface Auth {
-    token : String | null;
-    message: String | null
+    token : string | null;
+    message: string | null
     // Di Postman Saat Berhasil muncul token
     // Saat Gagal Muncul Message
 }
