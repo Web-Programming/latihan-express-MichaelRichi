@@ -1,7 +1,34 @@
-import { Inject, InjectionToken } from "@angular/core";
+// import { InjectionToken } from "@angular/core";
+// export const BROWSER_STORAGE = new InjectionToken<Storage>('Browser Storage', {
+//     providedIn: 'root',
+//     factory: () => sessionStorage
+// });
 
-export const BROWSER_STORAGE = new InjectionToken<Storage>('BrowserStorage', {
-    // Untuk Menyimpan JWT dalam local storage browser
-    providedIn: 'root',
-    factory: () => localStorage
-});
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class LocalStorageService {
+  constructor() {}
+
+  // Set a value in local storage
+  setItem(key: string, value: string): void {
+    localStorage.setItem(key, value);
+  }
+
+  // Get a value from local storage
+  getItem(key: string): string | null {
+    return localStorage.getItem(key);
+  }
+
+  // Remove a value from local storage
+  removeItem(key: string): void {
+    localStorage.removeItem(key);
+  }
+
+  // Clear all items from local storage
+  clear(): void {
+    localStorage.clear();
+  }
+}

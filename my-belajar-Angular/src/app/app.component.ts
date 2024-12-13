@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { AuthenticationService } from './authentication.service';
 import { User } from './user';
@@ -14,8 +14,8 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
   title = 'my-belajar-Angular';
 
-  router: Router = Inject(Router);
-  authService: AuthenticationService = Inject(AuthenticationService);
+  router: Router = inject(Router);
+  authService: AuthenticationService = inject(AuthenticationService);
 
   public isLoggedIn(): boolean { 
     return this.authService.isLoggedIn();

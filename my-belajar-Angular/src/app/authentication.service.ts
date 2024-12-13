@@ -1,7 +1,7 @@
-import { Inject, Injectable } from '@angular/core';
+import { inject, Inject, Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Auth } from './auth';
-import { BROWSER_STORAGE } from './storage';
+import { LocalStorageService } from './storage';
 import { User } from './user';
 
 @Injectable({
@@ -9,7 +9,9 @@ import { User } from './user';
 })
 export class AuthenticationService {
 
-  constructor(@Inject(BROWSER_STORAGE) private storage: Storage) { }
+  storage: LocalStorageService = inject(LocalStorageService);
+
+  constructor() { }
   url = "http://localhost:3000";
   async submitRegister(registerdata : FormGroup) : Promise<Auth>{
     const input = {

@@ -25,7 +25,7 @@ export class HousingLocationComponent {
   readonly baseUrl = "https://angular.io/assests/images/tutorials/faa";
   authService: AuthenticationService = Inject(AuthenticationService);
 
-  isLoggedIn(): boolean {
+  public isLoggedIn(): boolean {
     return this.authService.isLoggedIn();
   }
 }
